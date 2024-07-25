@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #D28278;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #E3E1B6;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 50px auto;
+            background-color: #F5DFD4;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-log {
+            border: 4px solid #000000;
+            padding: 20px;
+            border-radius: 10px;
+            height: 400px;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #AA342B;
+            border-radius: 5px;
+            box-sizing: border-box;       
+        }
+
+        .chat-submit {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .chat-submit:hover {
+            background-color: #5271FF;
+        }
+
+        .chat-log p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with SwiftBot</h1>
+    <div class="chat-container">
+        <div class="chat-log">
+            {% if user_input %}
+                <p><strong>You:</strong> {{ user_input }}</p>
+                <p><strong>SwiftBot:</strong> {{ bot_response }}</p>
+            {% endif %}
+        </div>
+        <form method="POST" action="/chat">
+            <input type="text" name="user_input" class="chat-input" placeholder="Type your message here" required>
+            <button type="submit" class="chat-submit">Send</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

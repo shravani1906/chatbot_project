@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #EA9FFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 30px;
+            background-color: #CEFD91;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-submit {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color:
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Profile</h1>
+        <div class="profile-info">
+            <p><strong>Username:</strong> {{ username }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+        </div>
+        <div class="link">
+            <a href="/dashboard">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>
